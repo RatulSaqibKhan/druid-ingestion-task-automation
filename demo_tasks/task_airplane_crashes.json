@@ -1,0 +1,62 @@
+{
+  "type": "index_parallel",
+  "spec": {
+    "ioConfig": {
+      "type": "index_parallel",
+      "inputSource": {
+        "type": "s3",
+        "uris": [
+          "s3://demo/airplane_crashes.json"
+        ],
+        "properties": {
+          "accessKeyId": {
+            "type": "environment",
+            "variable": "druid_s3_accessKey"
+          },
+          "secretAccessKey": {
+            "type": "environment",
+            "variable": "druid_s3_secretKey"
+          }
+        }
+      },
+      "inputFormat": {
+        "type": "json"
+      },
+      "appendToExisting": true
+    },
+    "tuningConfig": {
+      "type": "index_parallel",
+      "partitionsSpec": {
+        "type": "dynamic"
+      },
+      "logParseExceptions": true
+    },
+    "dataSchema": {
+      "dataSource": "airplane_crashes",
+      "timestampSpec": {
+        "column": "timestamp",
+        "format": "iso"
+      },
+      "dimensionsSpec": {
+        "dimensions": [
+          "location",
+          "operator",
+          "flight",
+          "route",
+          "type",
+          "registration",
+          "cn/in",
+          "aboard",
+          "fatalities",
+          "ground",
+          "summary"
+        ]
+      },
+      "granularitySpec": {
+        "queryGranularity": "day",
+        "rollup": false,
+        "segmentGranularity": "day"
+      }
+    }
+  }
+}

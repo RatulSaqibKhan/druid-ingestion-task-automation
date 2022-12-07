@@ -1,0 +1,26 @@
+{
+  "name": "ratulsaqibkhan/druid-ingestion-task-automate",
+  "description": "Druid Ingestion Task Automation",
+  "type": "library",
+  "require": {
+    "php": "^7.3|^8.0|^8.1",
+    "vlucas/phpdotenv": "v5.5.0"
+  },
+  "license": "None",
+  "autoload": {
+    "psr-4": {
+      "Ratulsaqibkhan\\DruidIngestionTaskAutomate\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Md. Nazmus Saqib Khan",
+      "email": "ratulkhan.jhenidah@gmail.com",
+      "role": "Maintainer"
+    }
+  ],
+  "minimum-stability": "dev"
+}
