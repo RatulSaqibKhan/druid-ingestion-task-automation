@@ -1,7 +1,7 @@
 # Druid Ingestion Task Automation
 
 ## Druid Task CURL
-  - curl -X 'POST' -H 'Content-Type:application/json' -d @<path/to/task.json> http://<druid-user>:<password>@<druid-host-ip>:<druid-overload-port>/druid/indexer/v1/task
+  - `curl -X 'POST' -H 'Content-Type:application/json' -d @<path/to/task.json> http://<druid-user>:<password>@<druid-host-ip>:<druid-overload-port>/druid/indexer/v1/task`
 
 ## To Do
   1. Run `composer install`
